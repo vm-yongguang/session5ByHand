@@ -2,6 +2,8 @@ package qualifierexample.app;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+import qualifierexample.model.Clerk;
+import qualifierexample.model.Manager;
 import qualifierexample.model.Person;
 
 public class App {
@@ -24,9 +26,15 @@ public class App {
 //		VehicleService vehicle = context.getBean(VehicleService.class);
 //		vehicle.service();
 		
-		Person p = context.getBean(Person.class);
-		p.showMyFriends();
-		
+//		Person p = context.getBean(Person.class);
+//		p.showMyFriends();
+
+		Manager manager = context.getBean(Manager.class);
+		manager.calculateSalary();
+
+		Clerk clerk = context.getBean(Clerk.class);
+		clerk.calculateSalary();
+
 		context.close();
 
 	}
